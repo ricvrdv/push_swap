@@ -16,11 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct s_stack_node
+typedef struct s_stack
 {
-	int					value;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
-}						t_stack_node;
+	long			value;
+	long			index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}					t_stack;
 
 #endif
