@@ -19,28 +19,29 @@ SRCS = srcs/commands/push.c \
 			srcs/push_swap/init_b_to_a.c \
 			srcs/push_swap/push_swap.c \
 			srcs/push_swap/stack_init.c \
-			srcs/push_swap/stack_utils.c
+			srcs/push_swap/stack_utils.c \
+			srcs/push_swap/split.c
 
 OBJS = $(SRCS:.c=.o)
+
+all:	$(LIBFT) $(NAME)
 
 $(LIBFT):
 	@make -C ./libft
 
-all:	$(NAME) $(LIBFT)
-
 $(NAME):	$(OBJS) $(LIBFT)
-	ar rcs $(NAME) $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(EXEC)
+	$(RM) $(OBJS)
 	@make clean -C ./libft
 
 fclean:	clean
-	@$(RM) $(NAME)
-	@$(RM) $(LIBFT)
+	$(RM) $(NAME)
+	@make fclean -C ./libft
 
 re: fclean all
 

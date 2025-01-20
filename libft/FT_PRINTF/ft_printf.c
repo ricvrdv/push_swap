@@ -51,7 +51,7 @@ static void	check_specifier(char sp, va_list *args, int *len, int *i)
 		(*i)--;
 }
 
-int	main()
+/*int	main()
 {
 	char	ch = 'r';
 	int		number = -42;
@@ -59,4 +59,4 @@ int	main()
 
 	ft_printf("Hello my name starts with an %c and I study at %u. %s\naddress: %p", ch, number, string, string);
 	return (0);
-}
+}*/

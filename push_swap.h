@@ -6,7 +6,7 @@
 /*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:30:17 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/20 18:40:50 by applecore        ###   ########.fr       */
+/*   Updated: 2025/01/20 19:52:29 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	free_stack(t_stack_node **stack);
 void	free_errors(t_stack_node **a);
 
 //PUSH_SWAP
+char	**split_arg(char *s, char c);
 void	init_stack_a(t_stack_node **a, char **argv);
 void	init_nodes_a(t_stack_node *a, t_stack_node *b);
 void	init_nodes_b(t_stack_node *a, t_stack_node *b);
