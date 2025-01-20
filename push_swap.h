@@ -6,7 +6,7 @@
 /*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 18:30:17 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/17 12:04:40 by applecore        ###   ########.fr       */
+/*   Updated: 2025/01/20 14:06:21 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@
 
 typedef struct s_stack_node
 {
-	long			nbr;
-	long			index;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}					t_stack_node;
+	int					nbr;
+	int					index;
+	int					push_cost;
+	bool				above_median;
+	bool				cheapest;
+	struct s_stack_node	*target_node;
+	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
+}						t_stack_node;
 
 #endif
