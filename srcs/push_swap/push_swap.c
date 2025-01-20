@@ -6,11 +6,11 @@
 /*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 19:15:44 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/17 10:52:11 by applecore        ###   ########.fr       */
+/*   Updated: 2025/01/20 18:53:35 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 int	main(int argc, char *argv[])
 {
