@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 11:04:07 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/21 14:41:57 by rjesus-d         ###   ########.fr       */
+/*   Created: 2024/11/13 16:29:27 by rjesus-d          #+#    #+#             */
+/*   Updated: 2024/11/18 16:24:35 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "ft_printf.h"
 
-void	sort_three(t_stack_node **a)
+void	ft_print_unsigned_int(unsigned int u, int *len)
 {
-	t_stack_node	*biggest_node;
+	char	digit;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a, false);
-	else if ((*a)->next == biggest_node)
-		rra(a, false);
-	if ((*a)->nbr > (*a)->next->nbr)
-		sa(a, false);
+	if (u > 9)
+		ft_print_unsigned_int(u / 10, len);
+	digit = (u % 10) + '0';
+	ft_print_char(digit, len);
 }

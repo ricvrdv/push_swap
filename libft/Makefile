@@ -1,83 +1,90 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/09 19:09:48 by rjesus-d          #+#    #+#              #
+#    Updated: 2025/01/21 11:24:18 by rjesus-d         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
-SRCS = PART_1/ft_isalpha.c \
-       PART_1/ft_isdigit.c \
-       PART_1/ft_isalnum.c \
-       PART_1/ft_isascii.c \
-       PART_1/ft_isprint.c \
-       PART_1/ft_strlen.c \
-       PART_1/ft_memset.c \
-       PART_1/ft_bzero.c \
-       PART_1/ft_memcpy.c \
-       PART_1/ft_memmove.c \
-       PART_1/ft_strlcpy.c \
-       PART_1/ft_strlcat.c \
-       PART_1/ft_toupper.c \
-       PART_1/ft_tolower.c \
-       PART_1/ft_strchr.c \
-       PART_1/ft_strrchr.c \
-       PART_1/ft_strncmp.c \
-       PART_1/ft_memchr.c \
-       PART_1/ft_memcmp.c \
-       PART_1/ft_strnstr.c \
-       PART_1/ft_atoi.c \
-       PART_1/ft_calloc.c \
-       PART_1/ft_strdup.c \
-       PART_2/ft_strtrim.c \
-       PART_2/ft_split.c \
-       PART_2/ft_itoa.c \
-       PART_2/ft_strmapi.c \
-       PART_2/ft_striteri.c \
-       PART_2/ft_putchar_fd.c \
-       PART_2/ft_putstr_fd.c \
-       PART_2/ft_putendl_fd.c \
-       PART_2/ft_putnbr_fd.c
+SRCS = ft_isalpha.c \
+       ft_isdigit.c \
+       ft_isalnum.c \
+       ft_isascii.c \
+       ft_isprint.c \
+       ft_strlen.c \
+       ft_memset.c \
+       ft_bzero.c \
+       ft_memcpy.c \
+       ft_memmove.c \
+       ft_strlcpy.c \
+       ft_strlcat.c \
+       ft_toupper.c \
+       ft_tolower.c \
+       ft_strchr.c \
+       ft_strrchr.c \
+       ft_strncmp.c \
+       ft_memchr.c \
+       ft_memcmp.c \
+       ft_strnstr.c \
+       ft_atoi.c \
+       ft_calloc.c \
+       ft_strdup.c \
+       ft_substr.c \
+       ft_strjoin.c \
+       ft_strtrim.c \
+       ft_split.c \
+       ft_itoa.c \
+       ft_strmapi.c \
+       ft_striteri.c \
+       ft_putchar_fd.c \
+       ft_putstr_fd.c \
+       ft_putendl_fd.c \
+       ft_putnbr_fd.c
 
 OBJS = $(SRCS:.c=.o)
 
-EXEC = a.out
-
-BONUS = BONUS/ft_lstnew.c \
-        BONUS/ft_lstadd_front.c \
-        BONUS/ft_lstsize.c \
-        BONUS/ft_lstlast.c \
-        BONUS/ft_lstadd_back.c \
-        BONUS/ft_lstdelone.c \
-        BONUS/ft_lstclear.c \
-        BONUS/ft_lstiter.c \
-        BONUS/ft_lstmap.c
+BONUS = ft_lstnew.c \
+        ft_lstadd_front.c \
+        ft_lstsize.c \
+        ft_lstlast.c \
+        ft_lstadd_back.c \
+        ft_lstdelone.c \
+        ft_lstclear.c \
+        ft_lstiter.c \
+        ft_lstmap.c
 
 BONUS_OBJS = $(BONUS:.c=.o)
 
-SRCS_FT_PRINTF = FT_PRINTF/ft_printf.c \
-        FT_PRINTF/ft_putchar_len.c \
-        FT_PRINTF/ft_puthex_len.c \
-	FT_PRINTF/ft_putnbr_len.c \
-	FT_PRINTF/ft_putpointer_len.c \
-	FT_PRINTF/ft_putstr_len.c \
-	FT_PRINTF/ft_unsigned_int.c
+SRCS_FT_PRINTF = ft_printf/ft_printf.c \
+		ft_printf/ft_print_char.c \
+		ft_printf/ft_print_hex.c \
+		ft_printf/ft_print_int.c \
+		ft_printf/ft_print_pointer.c \
+		ft_printf/ft_print_str.c \
+		ft_printf/ft_print_unsigned_int.c
 
 FT_PRINTF_OBJS = $(SRCS_FT_PRINTF:.c=.o)
 
-SRCS_GET_NEXT_LINE = GET_NEXT_LINE/get_next_line.c \
-	GET_NEXT_LINE/get_next_line_utils.c
-
-GET_NEXT_LINE_OBJS = $(SRCS_GET_NEXT_LINE:.c=.o)
-
 all: $(NAME)
 
-$(NAME): $(OBJS) $(FT_PRINTF_OBJS) $(GET_NEXT_LINE_OBJS)
-	ar rcs $(NAME) $(OBJS) $(FT_PRINTF_OBJS) $(GET_NEXT_LINE_OBJS)
+$(NAME): $(OBJS) $(FT_PRINTF_OBJS)
+	ar rcs $(NAME) $(OBJS) $(FT_PRINTF_OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS) $(EXEC) $(BONUS_OBJS) $(FT_PRINTF_OBJS) $(GET_NEXT_LINE_OBJS)
+	rm -rf $(OBJS) $(BONUS_OBJS) $(FT_PRINTF_OBJS)
 
 fclean: clean
 	rm -rf $(NAME)
@@ -85,7 +92,7 @@ fclean: clean
 re: fclean
 	make && make bonus
 
-bonus:  $(BONUS_OBJS) $(OBJS) $(FT_PRINTF_OBJS) $(GET_NEXT_LINE_OBJS)
-	@make OBJS="$(BONUS_OBJS) $(OBJS) $(FT_PRINTF_OBJS) $(GET_NEXT_LINE_OBJS)" all
+bonus:	$(BONUS_OBJS) $(OBJS) $(FT_PRINTF_OBJS)
+	@make OBJS="$(BONUS_OBJS) $(OBJS) $(FT_PRINTF_OBJS)" all
 
 .PHONY: all clean fclean re bonus

@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 11:04:07 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/21 14:41:57 by rjesus-d         ###   ########.fr       */
+/*   Created: 2024/11/09 20:04:50 by rjesus-d          #+#    #+#             */
+/*   Updated: 2024/11/11 14:58:20 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "libft.h"
 
-void	sort_three(t_stack_node **a)
+int	ft_toupper(int c)
 {
-	t_stack_node	*biggest_node;
-
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a, false);
-	else if ((*a)->next == biggest_node)
-		rra(a, false);
-	if ((*a)->nbr > (*a)->next->nbr)
-		sa(a, false);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
+
+/*
+#include <stdio.h>
+#include <ctype.h>
+
+int   main(void)
+{
+        char    ch = 'a';
+
+        printf("Character is '%c'\n", ch);
+        printf("'%c' (using ft_toupper())\n", ft_toupper(ch));
+        printf("'%c' (using toupper())\n", toupper(ch));
+}*/

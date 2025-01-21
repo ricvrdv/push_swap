@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/01/21 11:00:36 by rjesus-d          #+#    #+#              #
+#    Updated: 2025/01/21 12:25:44 by rjesus-d         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap
 
 CC = cc
@@ -19,8 +31,7 @@ SRCS = srcs/commands/push.c \
 			srcs/push_swap/init_b_to_a.c \
 			srcs/push_swap/push_swap.c \
 			srcs/push_swap/stack_init.c \
-			srcs/push_swap/stack_utils.c \
-			srcs/push_swap/split.c
+			srcs/push_swap/stack_utils.c
 
 OBJS = $(SRCS:.c=.o)
 

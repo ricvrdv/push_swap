@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 11:04:07 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/21 14:41:57 by rjesus-d         ###   ########.fr       */
+/*   Created: 2024/11/13 16:06:04 by rjesus-d          #+#    #+#             */
+/*   Updated: 2024/11/18 16:23:17 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "ft_printf.h"
 
-void	sort_three(t_stack_node **a)
+void	ft_print_int(int number, int *len)
 {
-	t_stack_node	*biggest_node;
+	char	digit;
+	long	n_long;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a, false);
-	else if ((*a)->next == biggest_node)
-		rra(a, false);
-	if ((*a)->nbr > (*a)->next->nbr)
-		sa(a, false);
+	n_long = (long)number;
+	if (n_long < 0)
+	{
+		ft_print_char('-', len);
+		n_long *= -1;
+	}
+	if (n_long > 9)
+		ft_print_int(n_long / 10, len);
+	digit = (n_long % 10) + '0';
+	ft_print_char(digit, len);
 }
