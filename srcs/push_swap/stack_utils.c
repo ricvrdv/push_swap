@@ -6,7 +6,7 @@
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:06:50 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/23 11:12:53 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/01/27 13:38:40 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ bool	stack_sorted(t_stack_node *stack)
 t_stack_node	*find_min(t_stack_node *stack)
 {
 	t_stack_node	*min_node;
-	long			min;
+	int				min;
 
 	if (!stack)
 		return (NULL);
-	min = LONG_MAX;
+	min = INT_MAX;
 	while (stack)
 	{
 		if (stack->nbr < min)

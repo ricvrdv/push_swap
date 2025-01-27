@@ -6,13 +6,13 @@
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:04:58 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/23 13:49:56 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/01/27 17:06:53 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	current_index(t_stack_node *stack)
+void	set_index(t_stack_node *stack)
 {
 	int	i;
 	int	median;
@@ -103,8 +103,8 @@ void	set_cheapest(t_stack_node *stack)
 
 void	init_nodes_a(t_stack_node *a, t_stack_node *b)
 {
-	current_index(a);
-	current_index(b);
+	set_index(a);
+	set_index(b);
 	set_target_a(a, b);
 	cost_analysis_a(a, b);
 	set_cheapest(a);
