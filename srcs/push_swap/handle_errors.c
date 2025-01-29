@@ -6,7 +6,7 @@
 /*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:04:47 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/29 19:05:32 by applecore        ###   ########.fr       */
+/*   Updated: 2025/01/29 19:10:51 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ void	free_stack(t_stack_node **stack)
 void	free_errors(t_stack_node **a)
 {
 	free_stack(a);
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }

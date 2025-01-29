@@ -6,7 +6,7 @@
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:07:33 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/21 14:19:37 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/01/27 17:05:39 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void			free_errors(t_stack_node **a);
 void			init_stack_a(t_stack_node **a, char **argv);
 void			init_nodes_a(t_stack_node *a, t_stack_node *b);
 void			init_nodes_b(t_stack_node *a, t_stack_node *b);
-void			current_index(t_stack_node *stack);
+void			set_index(t_stack_node *stack);
 void			set_cheapest(t_stack_node *stack);
 void			prep_for_push(t_stack_node **s, t_stack_node *n, char c);
 int				stack_len(t_stack_node *stack);

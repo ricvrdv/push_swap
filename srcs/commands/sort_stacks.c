@@ -6,7 +6,7 @@
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:03:55 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/21 15:27:10 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/01/27 17:00:12 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	rotate_both(t_stack_node **a, t_stack_node **b,
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rr(a, b, false);
-	current_index(*a);
-	current_index(*b);
+	set_index(*a);
+	set_index(*b);
 }
 
 static void	rev_rotate_both(t_stack_node **a, t_stack_node **b,
@@ -26,8 +26,8 @@ static void	rev_rotate_both(t_stack_node **a, t_stack_node **b,
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rrr(a, b, false);
-	current_index(*a);
-	current_index(*b);
+	set_index(*a);
+	set_index(*b);
 }
 
 static void	prepare_target(t_stack_node **a, t_stack_node **b, char c)
@@ -85,6 +85,6 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 		init_nodes_b(*a, *b);
 		prepare_target(a, b, 'b');
 	}
-	current_index(*a);
+	set_index(*a);
 	min_on_top(a);
 }
