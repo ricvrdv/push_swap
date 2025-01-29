@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:04:47 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/21 14:48:31 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/01/29 19:05:32 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	error_syntax(char *str_n)
 {
+	if (!str_n || !*str_n) // ADDED THIS CONDITION TO CHECK FOR EMPTY STRING
+		return (1);
 	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
 		return (1);
 	if ((*str_n == '+' || *str_n == '-')
