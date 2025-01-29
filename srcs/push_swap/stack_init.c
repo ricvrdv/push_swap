@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:06:41 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/21 15:10:03 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/01/29 20:17:03 by applecore        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ static void	append_node(t_stack_node **stack, int n)
 		return ;
 	node->next = NULL;
 	node->nbr = n;
-	node->cheapest = 0;
+	node->index = -1;
+	//node->cheapest = 0;
 	if (!(*stack))
 	{
 		*stack = node;
