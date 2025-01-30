@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:06:50 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/29 20:15:56 by applecore        ###   ########.fr       */
+/*   Updated: 2025/01/28 17:39:06 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ bool	stack_sorted(t_stack_node *stack)
 t_stack_node	*find_min(t_stack_node *stack)
 {
 	t_stack_node	*min_node;
-	long				min;
+	long			min;
 
 	if (!stack)
 		return (NULL);
@@ -72,11 +72,11 @@ t_stack_node	*find_min(t_stack_node *stack)
 t_stack_node	*find_max(t_stack_node *stack)
 {
 	t_stack_node	*max_node;
-	int				max;
+	long			max;
 
 	if (!stack)
 		return (NULL);
-	max = INT_MIN;
+	max = LONG_MIN;
 	while (stack)
 	{
 		if (stack->nbr > max)

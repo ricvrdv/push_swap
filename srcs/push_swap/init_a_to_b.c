@@ -6,7 +6,7 @@
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:04:58 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/27 17:06:53 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:41:27 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_b;
 	t_stack_node	*target_node;
-	int				best_match_index;
+	long			best_match_index;
 
 	while (a)
 	{
-		best_match_index = INT_MIN;
+		best_match_index = LONG_MIN;
 		current_b = b;
 		while (current_b)
 		{
@@ -52,7 +52,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 			}
 			current_b = current_b->next;
 		}
-		if (best_match_index == INT_MIN)
+		if (best_match_index == LONG_MIN)
 			a->target_node = find_max(b);
 		else
 			a->target_node = target_node;
@@ -83,12 +83,12 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 void	set_cheapest(t_stack_node *stack)
 {
 	t_stack_node	*cheapest_node;
-	int				cheapest_value;
+	long			cheapest_value;
 
 	cheapest_node = NULL;
 	if (!stack)
 		return ;
-	cheapest_value = INT_MAX;
+	cheapest_value = LONG_MAX;
 	while (stack)
 	{
 		if (stack->push_cost < cheapest_value)

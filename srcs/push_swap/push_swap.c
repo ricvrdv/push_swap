@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:05:47 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/29 20:30:23 by applecore        ###   ########.fr       */
+/*   Updated: 2025/01/30 23:41:02 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,23 @@ static void	free_split(char **split)
 	free(split);
 }
 
+static char	**arg_parsing(char *arg, t_stack_node **a)
+{
+	char	**argv_split;
+
+	argv_split = ft_split(arg, ' ');
+	if (!argv_split || !argv_split[0])
+	{
+		if (argv_split)
+			free_split(argv_split);
+		ft_printf("Error\n");
+		return (NULL);
+	}
+	init_stack_a(a, argv_split);
+	free_split(argv_split);
+	return (argv_split);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack_node	*a;
@@ -36,21 +53,13 @@ int	main(int argc, char *argv[])
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
-	if (argc == 2)
+	else if (argc == 2)
 	{
-		argv = ft_split(argv[1], ' ');
-		if (!argv || !argv[0])
-		{
-			if (argv)
-				free_split(argv);
-			ft_printf("Error\n");
+		if (!arg_parsing(argv[1], &a))
 			return (1);
-		}
-		init_stack_a(&a, argv);
-		free_split(argv);
 	}
 	else
-		init_stack_a(&a, argv + 1);
+		init_stack_a(&a, argv);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)

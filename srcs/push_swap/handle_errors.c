@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_errors.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: applecore <applecore@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:04:47 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/29 19:10:51 by applecore        ###   ########.fr       */
+/*   Updated: 2025/01/30 23:41:33 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	error_syntax(char *str_n)
 {
-	if (!str_n || !*str_n) // ADDED THIS CONDITION TO CHECK FOR EMPTY STRING
-		return (1);
 	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
 		return (1);
 	if ((*str_n == '+' || *str_n == '-')
@@ -53,7 +51,6 @@ void	free_stack(t_stack_node **stack)
 	while (current)
 	{
 		tmp = current->next;
-		current->nbr = 0;
 		free(current);
 		current = tmp;
 	}
