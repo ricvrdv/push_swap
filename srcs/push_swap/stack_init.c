@@ -6,7 +6,7 @@
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:06:41 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/28 18:38:30 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:11:16 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void	append_node(t_stack_node **stack, int n)
 	}
 }
 
-void	init_stack_a(t_stack_node **a, char **argv)
+bool	init_stack_a(t_stack_node **a, char **argv, char **split_argv)
 {
 	long	n;
 	int		i;
@@ -72,15 +72,16 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	while (argv[i])
 	{
 		if (error_syntax(argv[i]))
-			free_errors(a);
+			return (free_errors(a, split_argv), false);
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
-			free_errors(a);
+			return (free_errors(a, split_argv), false);
 		if (error_duplicate(*a, (int)n))
-			free_errors(a);
+			return (free_errors(a, split_argv), false);
 		append_node(a, (int)n);
 		i++;
 	}
+	return (true);
 }
 
 t_stack_node	*get_cheapest(t_stack_node *stack)

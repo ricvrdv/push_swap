@@ -6,7 +6,7 @@
 /*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:04:47 by rjesus-d          #+#    #+#             */
-/*   Updated: 2025/01/30 23:41:33 by rjesus-d         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:05:53 by rjesus-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,27 @@ void	free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
-void	free_errors(t_stack_node **a)
+void	free_errors(t_stack_node **a, char **split_argv)
 {
-	free_stack(a);
+	if (a)
+		free_stack(a);
+	if (split_argv)
+		free_split(split_argv);
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
+}
+
+void	free_split(char **split)
+{
+	int	i;
+
+	if (!split)
+		return ;
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
 }
