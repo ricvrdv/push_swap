@@ -11,7 +11,7 @@ The program, `push_swap`, takes a list of integers as input, sorts them using tw
 - `libft/`: Custom library for utility functions.
 - `push_swap.h`: Header file.
 - `Makefile`: Compiles the project.
-- `checker_Mac`/`checker_linux`: Checker executables for Mac OS and Linux, respectively.
+- `checker_Mac`, `checker_linux`: Checker executables for Mac OS and Linux, respectively.
 - `README.md`: Project overview and usage instructions.
 
 ### KEY FEATURES
