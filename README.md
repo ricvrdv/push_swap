@@ -1,6 +1,5 @@
 # 42 - PUSH_SWAP
 
-### [MILESTONE 2]
 ### SUMMARY
 In this repository you can find the code implementation for the PUSH_SWAP project for 42. The goal is to sort a stack of integers using a limited set of operations. 
 
@@ -50,7 +49,5 @@ ARG="3 1 2"; ./push_swap $ARG | ./checker_Mac $ARG
 ```
 Outputs `OK` if the stack is sorted correctly, or `KO` if it is not.
 
-
-
-
-
+----
+🐸 Feel free to fork, clone, or contact me for questions or feedback. 
