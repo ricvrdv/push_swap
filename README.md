@@ -9,7 +9,7 @@ The program, `push_swap`, takes a list of integers as input, sorts them using tw
 - `src/`: Contains the source code for push_swap.
 - `libft/`: Custom library for utility functions.
 - `push_swap.h`: Header file.
-- `Makefile`: Tells `make` how to compile and link a program.
+- `Makefile`: Tells `make` how to compile and link the program.
 - `checker_Mac`, `checker_linux`: Checker executables for Mac OS and Linux, respectively.
 - `README.md`: Project overview and usage instructions.
 
